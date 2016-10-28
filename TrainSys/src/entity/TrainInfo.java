@@ -74,4 +74,11 @@ public class TrainInfo {
 		this.mile = mile;
 	}
 
+	@Override
+	public String toString() {
+		return "TrainInfo [train_no=" + train_no + ", start_station=" + start_station + ", arrival_station="
+				+ arrival_station + ", start_time=" + start_time + ", arrival_time=" + arrival_time + ", type=" + type
+				+ ", runtime=" + runtime + ", mile=" + mile + "]";
+	}
+
 }
