@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="TestServlet">ggg</a>
+<a href="ListServlet">ggg</a>
 </body>
 </html>

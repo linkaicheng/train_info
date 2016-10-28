@@ -45,10 +45,10 @@ public class TestServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		TrainDao trainDao = new TrainDao();
-		boolean b = trainDao.delTrain(new String[] { "1001" });
-		List<TrainInfo> list = trainDao.getAllTrain();
-		System.out.println(b);
-		System.out.println(list);
+		//boolean b = trainDao.delTrain(new String[] { "1001" });
+		//List<TrainInfo> list = trainDao.getAllTrain();
+		TrainInfo trainInfo=trainDao.findTrain("1002");
+		System.out.println(trainInfo);
 	}
 
 }

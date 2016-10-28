@@ -63,10 +63,11 @@ public class TrainDao extends BaseDao {
 	}
 
 	public TrainInfo findTrain(String no) {
-		String sql = "select * from train_info where train=" + no;
-		ResultSet rs = null;
-		List<TrainInfo> list = new ArrayList<TrainInfo>();
+		String sql = "select * from train_info where train_no=" + no;
+		PreparedStatement pstmt = null;
+		Connection conn = null;
 		TrainInfo trainInfo = null;
+		ResultSet rs=null;
 		try {
 			rs = getResultSet(sql, null);
 			while (rs.next()) {
@@ -79,14 +80,13 @@ public class TrainDao extends BaseDao {
 				trainInfo.setType(rs.getString("type"));
 				trainInfo.setStart_station(rs.getString("start_station"));
 				trainInfo.setStart_time(rs.getString("start_time"));
-				list.add(trainInfo);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
-			closeAllObject(rs, null, null);
+			closeAllObject(rs, pstmt, conn);
 		}
-		return list;
+		return trainInfo;
 	}
 }
